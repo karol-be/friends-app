@@ -1,0 +1,12 @@
+<ul class="nav nav-tabs">
+    <li ng-class="$ctrl.tabClass(tab)"
+        ng-repeat="tab in $ctrl.tabs"
+        tab="tab">
+
+        <a href="{{tab.link}}"
+           ng-click="$ctrl.selectedTab = tab">
+            {{tab.label}}
+        </a>
+    </li>
+</ul>
+<div ng-view></div>

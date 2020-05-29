@@ -1,0 +1,36 @@
+<div class="container">
+    <h1>Friends list</h1>
+
+    <div class="flex">
+        <div>
+            <h2>Friends preview</h2>
+            <ul>
+                <li ng-repeat="friend in $ctrl.friends">
+                    Name: {{friend.name}}, Age: {{friend.age}}, Gender: {{friend.gender}}
+                </li>
+            </ul>
+        </div>
+
+        <div class="pl-10">
+            <h2>Filter</h2>
+            <span>I would like see:</span>
+            <select ng-model="$ctrl.genderFilter">
+                <option value="">everyone</option>
+                <option ng-repeat="gender in $ctrl.genders" value="{{gender}}">
+                    {{gender}}s
+                </option>
+            </select>
+        </div>
+    </div>
+
+    <div>
+        <h2>Friends editable list</h2>
+        <ul>
+            <li ng-repeat="friend in $ctrl.friends | orderBy: 'age' | filter:{gender:$ctrl.genderFilter}">
+                <friends-list-item friend="friend" genders="$ctrl.genders"></friends-list-item>
+            </li>
+        </ul>
+    </div>
+
+
+</div>

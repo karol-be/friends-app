@@ -1,0 +1,10 @@
+<div class="container">
+    <h1>Friends list grouped by their gender</h1>
+
+    <div ng-repeat="gender in $ctrl.genders">
+        <h2>{{gender}}s:</h2>
+        <span ng-repeat="friend in $ctrl.friendsGenderGrouped[gender]">
+            {{friend.name + (!$last ? ",&nbsp" : ".")}}
+        </span>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="flex align-center mb-1">
+    <span>{{$ctrl.friend.name}}, aged: {{$ctrl.friend.age}} is a</span>
+
+    <div class="pl-1">
+        <select class="form-control input-sm"
+                ng-model="$ctrl.friend.gender">
+            <option ng-repeat="gender in $ctrl.genders"
+                    value="{{gender}}">
+                {{gender}}
+            </option>
+        </select>
+    </div>
+</div>
