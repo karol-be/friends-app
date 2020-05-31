@@ -26,7 +26,7 @@
     <div>
         <h2>Friends editable list</h2>
         <ul>
-            <li ng-repeat="friend in $ctrl.friends | orderBy: 'age' | filter:{gender:$ctrl.genderFilter}">
+            <li ng-repeat="friend in $ctrl.friends | orderBy: 'age' : true | filter:{gender:$ctrl.genderFilter}">
                 <friends-list-item friend="friend" genders="$ctrl.genders"></friends-list-item>
             </li>
         </ul>
